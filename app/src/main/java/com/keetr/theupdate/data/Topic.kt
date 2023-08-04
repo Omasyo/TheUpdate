@@ -1,6 +1,7 @@
 package com.keetr.theupdate.data
 
 enum class Topic(val param: String) {
+    None(""),
     News("news"),
     Sport("sport"),
     Tech("tech"),
@@ -16,5 +17,11 @@ enum class Topic(val param: String) {
     Food("food"),
     Science("science"),
     Gaming("gaming"),
-    Energy("energy")
+    Energy("energy");
+
+    companion object {
+        fun from(param: String) = when {
+            param.isBlank() -> None
+            else -> Topic.valueOf(param.replaceFirstChar { it.uppercaseChar() }) }
+    }
 }

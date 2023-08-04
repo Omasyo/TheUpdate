@@ -10,7 +10,7 @@ data class ArticleApiModel(
     @SerialName("authors") val authors: String,
     @SerialName("clean_url") val cleanUrl: String,
     @SerialName("country") val country: String,
-    @SerialName("excerpt") val excerpt: String,
+    @SerialName("excerpt") val excerpt: String?,
     @SerialName("_id") val id: String,
     @SerialName("is_opinion") val isOpinion: Boolean,
     @SerialName("language") val language: String?,
@@ -23,6 +23,6 @@ data class ArticleApiModel(
     @SerialName("_score") val score: Double?,
     @SerialName("summary") val summary: String,
     @SerialName("title") val title: String,
-    @SerialName("topic") val topic: String,
+    @SerialName("topic") val topic: String?,
     @SerialName("twitter_account") val twitterAccount: String?
 )

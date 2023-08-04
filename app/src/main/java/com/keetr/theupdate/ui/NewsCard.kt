@@ -1,6 +1,5 @@
 package com.keetr.theupdate.ui
 
-import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -10,7 +9,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -41,7 +39,7 @@ fun NewsCard(
     title: String,
     imageUrl: String,
     sourceName: String,
-    timestamp: String,
+    publishDate: String,
     onTap: () -> Unit
 ) {
     Column(
@@ -62,7 +60,7 @@ fun NewsCard(
             Text(sourceName, style = MaterialTheme.typography.titleMedium)
             Spacer(Modifier.weight(1f))
             Text(
-                timestamp,
+                publishDate,
                 modifier = Modifier.padding(end = 4f.dp),
                 style = MaterialTheme.typography.labelLarge
             )
@@ -96,7 +94,7 @@ private fun Preview() {
                 title = "International Women's Day: Bisola celebrates mother, daughter",
                 imageUrl = "",
                 sourceName = "Source Name",
-                timestamp = "30 mins ago",
+                publishDate = "30 mins ago",
             ) {}
         }
     }

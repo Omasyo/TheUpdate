@@ -1,7 +1,6 @@
 package com.keetr.theupdate.network
 
 import com.keetr.theupdate.network.models.LatestHeadlinesApiModel
-import io.ktor.client.HttpClient
 
 interface NewsDatasource {
     suspend fun fetchLatestHeadlines(
@@ -13,7 +12,7 @@ interface NewsDatasource {
         topic: String,
         sources: List<String>,
         notSources: List<String>,
-        ranked: Boolean,
+        rankedOnly: Boolean,
         pageSize: Int,
         page: Int,
     ) : Response<LatestHeadlinesApiModel>

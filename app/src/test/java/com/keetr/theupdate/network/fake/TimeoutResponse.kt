@@ -1,4 +1,4 @@
-package com.keetr.theupdate.network
+package com.keetr.theupdate.network.fake
 
 const val TimeoutResponse  = """{
     "status": "error",

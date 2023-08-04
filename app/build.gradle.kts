@@ -55,12 +55,16 @@ dependencies {
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
+
     implementation(libs.activity.compose)
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
+
+    implementation(libs.androidx.paging.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 
     implementation(libs.ktor.core)
     implementation(libs.ktor.auth)
@@ -71,6 +75,7 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
     testImplementation(libs.ktor.mock)
+    testImplementation(libs.kotlinx.coroutines.test)
 //    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 
     androidTestImplementation(libs.androidx.test.ext.junit)
