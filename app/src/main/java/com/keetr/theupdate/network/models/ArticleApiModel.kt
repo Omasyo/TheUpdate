@@ -15,7 +15,7 @@ data class ArticleApiModel(
     @SerialName("is_opinion") val isOpinion: Boolean,
     @SerialName("language") val language: String?,
     @SerialName("link") val link: String,
-    @SerialName("media") val media: String,
+    @SerialName("media") val media: String?,
     @SerialName("published_date") val publishedDate: String,
     @SerialName("published_date_precision") val publishedDatePrecision: String,
     @SerialName("rank") val rank: Int,

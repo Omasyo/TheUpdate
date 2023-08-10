@@ -5,15 +5,11 @@ import androidx.paging.PagingState
 import com.keetr.theupdate.data.mapper.toArticles
 import com.keetr.theupdate.network.Error
 import com.keetr.theupdate.network.NewsDatasource
-import com.keetr.theupdate.network.Response
 import com.keetr.theupdate.network.Success
-import com.keetr.theupdate.network.models.ArticleApiModel
-import com.keetr.theupdate.network.models.LatestHeadlinesApiModel
 
 class HeadlinePagingSource(
-    private val datasource: NewsDatasource
-//    private val response: Response<LatestHeadlinesApiModel>,
-//    val provider: suspend (page: Int) -> List<ArticleApiModel>,
+    private val datasource: NewsDatasource,
+    private val pageSize: Int
 ) : PagingSource<Int, Article>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Article> {
@@ -29,14 +25,14 @@ class HeadlinePagingSource(
             sources = listOf(),
             notSources = listOf(),
             rankedOnly = true,
-            pageSize = 20,
+            pageSize = pageSize,
             page = page
         )
 
-        return when(response) {
+        return when (response) {
             is Error -> {
                 return LoadResult.Error(
-                    Throwable(response.error.message)
+                    Throwable(response.error.errorCode)
                 )
             }
             is Success -> {

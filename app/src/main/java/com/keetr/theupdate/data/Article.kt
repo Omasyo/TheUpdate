@@ -9,6 +9,7 @@ data class Article(
     val link: String,
     val mediaUrl: String,
     val publishedDate: String,
+    val sourceIconUrl: String,
     val summary: String,
     val title: String,
     val topic: Topic

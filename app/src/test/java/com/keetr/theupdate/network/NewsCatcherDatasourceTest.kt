@@ -16,7 +16,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 
-class DefaultNewsDatasourceTest {
+class NewsCatcherDatasourceTest {
 //    private lateinit var client: HttpClient
 //    private lateinit var datasource: NewsDatasource
 
@@ -40,7 +40,7 @@ class DefaultNewsDatasourceTest {
             )
         }
 
-        val datasource = DefaultNewsDatasource(createClient(mockEngine))
+        val datasource = NewsCatcherDatasource(createClient(mockEngine))
 
         val res = datasource.fetchLatestHeadlines(
             duration = "",
@@ -75,7 +75,7 @@ class DefaultNewsDatasourceTest {
             )
         }
 
-        val datasource = DefaultNewsDatasource(createClient(mockEngine))
+        val datasource = NewsCatcherDatasource(createClient(mockEngine))
 
         val res = datasource.fetchLatestHeadlines(
             duration = "",

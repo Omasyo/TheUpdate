@@ -7,11 +7,10 @@ import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
-import io.ktor.client.statement.HttpResponse
 
 const val TAG = "NewsDatasource"
 
-internal class DefaultNewsDatasource(private val client: HttpClient) : NewsDatasource {
+internal class NewsCatcherDatasource(private val client: HttpClient) : NewsDatasource {
     override suspend fun fetchLatestHeadlines(
         duration: String,
         lang: List<String>,
